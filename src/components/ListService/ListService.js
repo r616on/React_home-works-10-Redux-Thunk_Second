@@ -2,12 +2,10 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Service from "../Service/Service";
 import "./desktop.scss";
-import { fetchItemsThunked } from "../../redux/actionCreators";
+import { fetchItemsThunked } from "../../store-toolkit/SliceActionCreators";
 
 function ListService() {
-  const { services, loading, error } = useSelector(
-    (store) => store.listReducer
-  );
+  const { services, loading, error } = useSelector((store) => store.listSlice);
   const dispatch = useDispatch();
 
   useEffect(() => {

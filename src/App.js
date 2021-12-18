@@ -7,7 +7,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import store from "./store-toolkit/store";
 import ListService from "./components/ListService/ListService";
 import EditService from "./components/EditService/EditService";
 

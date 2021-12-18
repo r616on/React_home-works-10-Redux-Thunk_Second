@@ -4,20 +4,21 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   fetchItemFormThunked,
   fetchEditItemThunked,
-} from "../../redux/actionCreators";
+} from "../../store-toolkit/SliceActionCreators";
+import { changeFormValue } from "../../store-toolkit/SliceForm";
 import "./desktop.scss";
 
 function EditService() {
   const dispatch = useDispatch();
-  const { loading, error } = useSelector((store) => store.listReducer);
-  const form = useSelector((store) => store.formReducer);
+  const { loading, error } = useSelector((store) => store.listSlice);
+  const form = useSelector((store) => store.formSlice.form);
   const params = useParams();
   const navigate = useNavigate();
 
   const handleChange = ({ target }) => {
     const name = target.name;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    dispatch({ type: "CHANGE_FORM_VALUES", payload: { fild: name, value } });
+    dispatch(changeFormValue({ fild: name, value }));
   };
 
   const handleSubmit = (e) => {

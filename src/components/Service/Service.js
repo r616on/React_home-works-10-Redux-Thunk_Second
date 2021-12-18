@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./desktop.scss";
-import { fetchDelItemsThunked } from "../../redux/actionCreators";
+import { fetchDelItemsThunked } from "../../store-toolkit/SliceActionCreators";
 import { useDispatch } from "react-redux";
 
 const Service = ({ id, name, price }) => {
